@@ -3,454 +3,615 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="description" content="Free Instagram panorama splitter. Cut one wide photo into a seamless carousel or profile grid at 1080 px, right in your browser. No upload, no signup.">
-<meta property="og:title" content="Swipeframe – Seamless Instagram Carousel Splitter">
-<meta property="og:description" content="Split a panorama into perfectly sized Instagram slides. Free, private, in your browser.">
+<title>Instagram Panorama Splitter – Seamless Carousel Maker | Swipeframe</title>
+<meta name="description" content="Split a wide photo into a seamless Instagram carousel or profile grid in seconds. Free, no signup, perfect 1080 px slides. Your photo never leaves your device.">
 <link rel="canonical" href="https://swipeframe.pages.dev/">
-<!-- Paste the AdSense <script> tag here once your site is approved -->
-<style>:root{color-scheme:light;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
-<title>Swipeframe – Free Instagram Panorama &amp; Carousel Splitter</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Familjen+Grotesk:wght@500;700&family=Instrument+Sans:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap">
+<link rel="alternate" hreflang="en" href="https://swipeframe.pages.dev/">
+<link rel="alternate" hreflang="es" href="https://swipeframe.pages.dev/es/">
+<link rel="alternate" hreflang="x-default" href="https://swipeframe.pages.dev/">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="theme-color" content="#F4F5F2" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#111513" media="(prefers-color-scheme: dark)">
+<meta name="color-scheme" content="light dark">
+<meta name="application-name" content="Swipeframe">
+<meta name="apple-mobile-web-app-title" content="Swipeframe">
+<meta name="format-detection" content="telephone=no">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Swipeframe">
+<meta property="og:title" content="Swipeframe: split panoramas into seamless Instagram carousels">
+<meta property="og:description" content="Drop in a wide photo and get perfectly sized slides that line up edge to edge. Free and private.">
+<meta property="og:url" content="https://swipeframe.pages.dev/">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="es_LA">
+<meta property="og:image" content="https://swipeframe.pages.dev/assets/og-en.png">
+<meta property="og:image:secure_url" content="https://swipeframe.pages.dev/assets/og-en.png">
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="A panorama split into three Instagram carousel slides on a green cutting mat.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Swipeframe: split panoramas into seamless Instagram carousels">
+<meta name="twitter:description" content="Drop in a wide photo and get perfectly sized slides that line up edge to edge. Free and private.">
+<meta name="twitter:image" content="https://swipeframe.pages.dev/assets/og-en.png">
+<meta name="twitter:image:alt" content="A panorama split into three Instagram carousel slides on a green cutting mat.">
+
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="icon" href="/assets/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="preload" href="/assets/schibsted.woff" as="font" type="font/woff" crossorigin>
+
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "WebApplication", "@id": "https://swipeframe.pages.dev/#app", "name": "Swipeframe", "url": "https://swipeframe.pages.dev/", "description": "Free online tool that splits a panorama into a seamless Instagram carousel or profile grid.", "inLanguage": "en", "applicationCategory": "MultimediaApplication", "operatingSystem": "Any (web browser)", "browserRequirements": "Requires JavaScript", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "image": "https://swipeframe.pages.dev/assets/og-en.png", "featureList": ["Carousel", "Profile grid", "1080 px JPG", "4:5, 1:1, 3:4"]}, {"@type": "FAQPage", "@id": "https://swipeframe.pages.dev/#faq", "inLanguage": "en", "mainEntity": [{"@type": "Question", "name": "How many slides can an Instagram carousel have?", "acceptedAnswer": {"@type": "Answer", "text": "Up to 20 photos. Swipeframe splits your image into anywhere from 2 to 20 slides."}}, {"@type": "Question", "name": "What size should carousel slides be?", "acceptedAnswer": {"@type": "Answer", "text": "1080 × 1350 px (4:5 portrait) takes up the most space in the feed. Swipeframe exports every slide at exactly 1080 px wide, so Instagram has nothing to resize."}}, {"@type": "Question", "name": "Why is there a visible line between my slides?", "acceptedAnswer": {"@type": "Answer", "text": "Make sure every slide has the same shape and that you selected them in order. Mixing shapes makes Instagram crop each slide differently."}}, {"@type": "Question", "name": "How does the profile grid split work?", "acceptedAnswer": {"@type": "Answer", "text": "It cuts one image into rows of three posts, so your profile shows a single big picture. Upload post 1 first; it ends up in the bottom right once all the posts are up."}}, {"@type": "Question", "name": "Does Swipeframe upload my photo?", "acceptedAnswer": {"@type": "Answer", "text": "No. The cutting happens in your browser, so your photo stays on your phone or computer."}}, {"@type": "Question", "name": "Is it free?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. No account, no watermark and no limits."}}]}]}</script>
+
 <style>
-/* Layout: contact-sheet workbench — controls rail left, the photo and its film strip on the light table right */
+@font-face{font-family:"Schibsted Grotesk";src:url("/assets/schibsted.woff") format("woff");font-weight:400 900;font-display:swap}
+
+/* Layout: a cutting mat holds the photo and its slices (the one bold element); a quiet control panel sits beside it, and drops into a fixed save bar on phones */
 :root{
-  --paper:#e9ecf0; --sheet:#f8f9fb; --ink:#15181d; --muted:#596170; --rule:#cdd3db;
-  --pencil:#cf2338; --on-pencil:#ffffff; --film:#191c22; --edge:#e2a03a; --on-film:#d9dde4;
-  --display:"Familjen Grotesk","Helvetica Neue",Arial,sans-serif;
-  --body:"Instrument Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
-  --mono:"JetBrains Mono",ui-monospace,"SF Mono",Menlo,monospace;
+  --paper:#F4F5F2; --surface:#FFFFFF; --ink:#18201C; --muted:#5B6660; --line:#DCE1DD; --soft:#EBEEEA;
+  --mat:#2E5B4C; --mat-minor:rgba(255,255,255,.07); --mat-major:rgba(255,255,255,.15); --on-mat:#E8F0EB; --on-mat-muted:#B4C7BD;
+  --cut:#FFD84D; --action:#18201C; --on-action:#FFFFFF; --focus:#2E7D63;
+  --font:"Schibsted Grotesk",ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+  --r-lg:16px; --r-md:10px; --r-sm:7px;
+  color-scheme:light;
 }
 @media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
-  --paper:#111318; --sheet:#1a1d24; --ink:#e8eaee; --muted:#9aa2ae; --rule:#2d323c;
-  --pencil:#ff5468; --on-pencil:#16070a; --film:#08090c; --edge:#e8ac4c; --on-film:#c9ced6; color-scheme:dark}}
+  --paper:#111513; --surface:#181D1A; --ink:#E7ECE9; --muted:#9AA59F; --line:#2A322E; --soft:#1F2522;
+  --mat:#1F3F35; --mat-minor:rgba(255,255,255,.05); --mat-major:rgba(255,255,255,.11); --on-mat:#E3ECE7; --on-mat-muted:#9DB4A8;
+  --cut:#FFD84D; --action:#E7ECE9; --on-action:#111513; --focus:#6FD1AE; color-scheme:dark}}
 :root[data-theme="dark"]{
-  --paper:#111318; --sheet:#1a1d24; --ink:#e8eaee; --muted:#9aa2ae; --rule:#2d323c;
-  --pencil:#ff5468; --on-pencil:#16070a; --film:#08090c; --edge:#e8ac4c; --on-film:#c9ced6; color-scheme:dark}
+  --paper:#111513; --surface:#181D1A; --ink:#E7ECE9; --muted:#9AA59F; --line:#2A322E; --soft:#1F2522;
+  --mat:#1F3F35; --mat-minor:rgba(255,255,255,.05); --mat-major:rgba(255,255,255,.11); --on-mat:#E3ECE7; --on-mat-muted:#9DB4A8;
+  --cut:#FFD84D; --action:#E7ECE9; --on-action:#111513; --focus:#6FD1AE; color-scheme:dark}
 
-*{box-sizing:border-box}
-body{background:var(--paper);color:var(--ink);font:15px/1.55 var(--body);
-  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:0 48px}
-.wrap{max-width:1180px;margin:0 auto}
-header{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:8px 24px;padding-block:22px 6px}
-.mark{font:700 22px/1 var(--display);letter-spacing:-.02em;display:flex;align-items:center;gap:10px}
-.mark i{width:22px;height:16px;border:2px solid var(--ink);border-radius:2px;position:relative;display:inline-block}
-.mark i::after{content:"";position:absolute;inset:-2px auto -2px 8px;border-left:2px dashed var(--pencil)}
-.privacy{font:500 12px/1.4 var(--mono);color:var(--muted);letter-spacing:.02em}
-.hero{padding-block:26px 22px;max-width:760px}
-h1{font:700 clamp(30px,5.4vw,52px)/1.02 var(--display);letter-spacing:-.035em;margin:0 0 12px;text-wrap:balance}
-h1 em{font-style:normal;color:var(--pencil)}
-.lede{margin:0;color:var(--muted);font-size:17px;max-width:62ch}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
+:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+body{margin:0;background:var(--paper);color:var(--ink);font:400 16px/1.55 var(--font);-webkit-font-smoothing:antialiased;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:0 40px}
+[hidden]{display:none!important}
+img,canvas{max-width:100%}
+button{font:inherit;color:inherit}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--focus);outline-offset:2px;border-radius:4px}
+.wrap{max-width:1160px;margin:0 auto}
 
-.work{display:grid;grid-template-columns:300px minmax(0,1fr);gap:20px;align-items:start}
-@media (max-width:880px){.work{grid-template-columns:minmax(0,1fr)}}
-.rail{background:var(--sheet);border:1px solid var(--rule);border-radius:10px;padding:18px;display:flex;flex-direction:column;gap:18px;position:sticky;top:calc(env(safe-area-inset-top,0px) + 12px)}
-@media (max-width:880px){.rail{position:static}}
-.field{display:flex;flex-direction:column;gap:8px}
-.label{font:500 11px/1 var(--mono);text-transform:uppercase;letter-spacing:.09em;color:var(--muted);display:flex;justify-content:space-between;gap:8px}
-.label b{color:var(--ink);font-weight:500}
-.seg{display:grid;grid-auto-flow:column;grid-auto-columns:1fr;border:1px solid var(--rule);border-radius:8px;padding:3px;gap:3px;background:var(--paper)}
-.seg button{all:unset;cursor:pointer;text-align:center;padding:7px 4px;border-radius:5px;font:500 13px/1.2 var(--body);color:var(--muted)}
-.seg button small{display:block;font:500 10px/1.3 var(--mono);opacity:.75;margin-top:2px}
-.seg button[aria-pressed="true"]{background:var(--sheet);color:var(--ink);box-shadow:0 1px 2px rgba(0,0,0,.12)}
-.seg button:focus-visible,.btn:focus-visible,input[type=range]:focus-visible{outline:2px solid var(--pencil);outline-offset:2px}
-.row{display:flex;gap:10px;align-items:center}
-input[type=range]{flex:1;min-width:0;accent-color:var(--pencil)}
-.num{font:500 15px/1 var(--mono);font-variant-numeric:tabular-nums;min-width:2ch;text-align:right}
-.btn{all:unset;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:10px 14px;border-radius:8px;font:600 14px/1 var(--body);border:1px solid var(--rule);background:var(--paper);color:var(--ink)}
-.btn.small{padding:6px 9px;font-size:12px}
-.btn.primary{background:var(--pencil);border-color:var(--pencil);color:var(--on-pencil)}
-.btn.primary[disabled]{opacity:.6;cursor:progress}
-.drop{border:1.5px dashed var(--rule);border-radius:8px;padding:14px;text-align:center;display:flex;flex-direction:column;gap:8px;align-items:center}
-.drop p{margin:0;font-size:12px;color:var(--muted)}
-.drop .file{font:500 11px/1.3 var(--mono);color:var(--ink);word-break:break-all}
-.meta{font:500 12px/1.5 var(--mono);color:var(--muted);font-variant-numeric:tabular-nums}
-.meta b{color:var(--ink);font-weight:500}
-[data-only]{}
+/* header */
+.top{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:18px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;font-weight:750;font-size:19px;letter-spacing:-.015em}
+.brand svg{width:30px;height:30px;flex:none}
+.lang{font-size:14px;font-weight:500;color:var(--muted);text-decoration:none;padding:8px 12px;border:1px solid var(--line);border-radius:999px}
+.lang:hover{color:var(--ink);border-color:var(--muted)}
 
-.stage{display:flex;flex-direction:column;gap:20px;min-width:0}
-.table{background:var(--sheet);border:1px solid var(--rule);border-radius:10px;padding:16px;min-width:0}
-.table h2{font:700 15px/1 var(--display);margin:0 0 12px;display:flex;justify-content:space-between;gap:10px;align-items:baseline}
-.table h2 span{font:500 11px/1 var(--mono);color:var(--muted);letter-spacing:.05em}
-#overview{display:block;width:100%;height:auto;border-radius:4px;background:var(--paper)}
-.film{background:var(--film);border-radius:6px;padding:20px 12px;overflow-x:auto;position:relative;
-  background-image:radial-gradient(circle at 50% 50%,var(--sheet) 0 3px,transparent 3.5px),radial-gradient(circle at 50% 50%,var(--sheet) 0 3px,transparent 3.5px);
-  background-size:16px 16px,16px 16px;background-repeat:repeat-x;background-position:4px 3px,4px calc(100% - 3px)}
-.frames{display:flex;gap:10px;width:max-content}
-.frame{display:flex;flex-direction:column;gap:6px;width:150px}
-.frame canvas{width:100%;height:auto;display:block;border-radius:2px}
-.frame .tag{display:flex;justify-content:space-between;align-items:center;font:500 11px/1 var(--mono);color:var(--edge)}
-.frame .tag button{all:unset;cursor:pointer;color:var(--on-film);font:500 11px/1 var(--mono);padding:4px 6px;border-radius:4px;border:1px solid rgba(255,255,255,.18)}
-.frame .tag button:hover{border-color:var(--edge);color:var(--edge)}
+/* hero */
+.hero{padding-block:22px 26px;display:grid;gap:12px}
+h1{margin:0;font-weight:780;font-size:clamp(31px,4.6vw,50px);line-height:1.04;letter-spacing:-.035em;max-width:17ch;text-wrap:balance}
+.lede{margin:0;color:var(--muted);font-size:clamp(16px,1.6vw,18px);max-width:56ch;text-wrap:pretty}
 
-.phone-wrap{display:flex;flex-wrap:wrap;gap:20px;align-items:center}
-.phone{width:280px;max-width:100%;border:1px solid var(--rule);border-radius:14px;background:var(--paper);overflow:hidden}
-.phone .bar{display:flex;align-items:center;gap:8px;padding:9px 11px;font:600 12px/1 var(--body)}
-.phone .bar i{width:22px;height:22px;border-radius:50%;background:linear-gradient(135deg,var(--edge),var(--pencil));display:inline-block}
-.swipe{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none}
+/* work area */
+.work{display:grid;grid-template-columns:minmax(0,1fr) 330px;gap:20px;align-items:start}
+.stage{display:grid;gap:20px;min-width:0}
+
+/* the cutting mat */
+.mat{background-color:var(--mat);color:var(--on-mat);border-radius:var(--r-lg);padding:22px;display:grid;gap:18px;min-width:0;
+  background-image:linear-gradient(var(--mat-major) 1px,transparent 1px),linear-gradient(90deg,var(--mat-major) 1px,transparent 1px),
+    linear-gradient(var(--mat-minor) 1px,transparent 1px),linear-gradient(90deg,var(--mat-minor) 1px,transparent 1px);
+  background-size:60px 60px,60px 60px,12px 12px,12px 12px;background-position:-1px -1px}
+.print{position:relative;display:grid;place-items:center}
+#overview{display:block;width:100%;height:auto;border-radius:3px;box-shadow:0 1px 2px rgba(0,0,0,.25),0 10px 30px -12px rgba(0,0,0,.55);background:#000;user-select:none;-webkit-user-select:none}
+#overview.drag-x{cursor:ew-resize;touch-action:pan-y}
+#overview.drag-y{cursor:ns-resize;touch-action:pan-x}
+.matnote{display:flex;flex-wrap:wrap;justify-content:space-between;gap:4px 16px;font-size:14px;line-height:1.45;color:var(--on-mat-muted)}
+.matnote b{color:var(--on-mat);font-weight:600}
+.drophint{position:absolute;inset:0;border:2px dashed var(--cut);border-radius:6px;background:rgba(20,40,33,.72);display:grid;place-items:center;font-weight:650;font-size:18px;color:var(--on-mat)}
+
+.slices{display:flex;gap:10px;overflow-x:auto;padding-bottom:4px;scrollbar-width:thin;scroll-snap-type:x proximity}
+.slice{all:unset;cursor:pointer;flex:0 0 auto;width:116px;display:grid;gap:7px;scroll-snap-align:start;position:relative}
+.slice canvas{width:100%;height:auto;display:block;border-radius:3px;box-shadow:0 1px 2px rgba(0,0,0,.25);transition:transform .15s ease}
+.slice:hover canvas{transform:translateY(-2px)}
+.slice span{font-size:13px;font-weight:550;color:var(--on-mat-muted);font-variant-numeric:tabular-nums}
+.slice:focus-visible{outline:2px solid var(--cut);outline-offset:3px;border-radius:4px}
+.slice i{position:absolute;top:6px;left:6px;min-width:24px;height:24px;padding-inline:6px;border-radius:12px;background:rgba(0,0,0,.6);color:#fff;font:650 13px/24px var(--font);font-style:normal;text-align:center;font-variant-numeric:tabular-nums}
+
+/* preview card */
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-lg);padding:22px;min-width:0}
+.card h2{margin:0 0 4px;font-size:19px;font-weight:700;letter-spacing:-.015em}
+.card > p{margin:0 0 18px;color:var(--muted);font-size:15px;max-width:60ch}
+.previews{display:flex;flex-wrap:wrap;gap:22px;align-items:flex-start}
+.phone{width:300px;max-width:100%;background:var(--surface);border:1px solid var(--line);border-radius:22px;overflow:hidden;box-shadow:0 18px 40px -24px rgba(0,0,0,.35)}
+.phone .who{display:flex;align-items:center;gap:9px;padding:11px 12px;font-size:14px;font-weight:650}
+.phone .who i{width:28px;height:28px;border-radius:50%;background:conic-gradient(from 210deg,#FFD84D,#E96A4A,#B43D8C,#FFD84D);padding:2px;display:inline-grid}
+.phone .who i::after{content:"";border-radius:50%;background:var(--mat);border:2px solid var(--surface)}
+.viewport{position:relative}
+.swipe{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;overscroll-behavior-x:contain}
 .swipe::-webkit-scrollbar{display:none}
 .swipe canvas{flex:0 0 100%;width:100%;height:auto;scroll-snap-align:start;display:block}
-.dots{display:flex;justify-content:center;gap:4px;padding:9px}
-.dots span{width:6px;height:6px;border-radius:50%;background:var(--rule)}
-.dots span.on{background:var(--pencil)}
-.gridview{display:grid;grid-template-columns:repeat(3,1fr);gap:2px}
-.gridview div{position:relative}
-.gridview canvas{width:100%;height:auto;display:block}
-.gridview em{position:absolute;left:6px;top:6px;font:500 10px/1 var(--mono);font-style:normal;background:var(--pencil);color:var(--on-pencil);padding:3px 5px;border-radius:3px}
-.tip{flex:1;min-width:200px;max-width:42ch;color:var(--muted);font-size:14px;margin:0}
-.tip b{color:var(--ink)}
+.count{position:absolute;top:10px;right:10px;background:rgba(0,0,0,.62);color:#fff;font-size:12px;font-weight:600;padding:3px 9px;border-radius:12px;font-variant-numeric:tabular-nums;pointer-events:none}
+.dots{display:flex;justify-content:center;gap:4px;padding:11px}
+.dots span{width:6px;height:6px;border-radius:50%;background:var(--line);transition:background .15s}
+.dots span.on{background:#3897F0}
+.profile{display:grid;grid-template-columns:repeat(3,1fr);gap:2px}
+.profile div{position:relative}
+.profile canvas{display:block;width:100%;height:auto}
+.profile em{position:absolute;left:6px;bottom:6px;background:rgba(0,0,0,.62);color:#fff;font-size:11px;font-weight:600;font-style:normal;padding:2px 7px;border-radius:10px;font-variant-numeric:tabular-nums}
+.tip{flex:1 1 220px;margin:0;color:var(--muted);font-size:15px;max-width:44ch}
+.tip strong{color:var(--ink);font-weight:650;display:block;margin-bottom:4px}
 
-.guide{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:36px;padding-block:56px 0}
-.guide h2{font:700 24px/1.15 var(--display);letter-spacing:-.02em;margin:0 0 14px;text-wrap:balance}
-.guide ol{margin:0;padding-left:1.3em;display:flex;flex-direction:column;gap:8px}
-.guide ol li::marker{font-family:var(--mono);color:var(--pencil)}
-.guide dl{margin:0;display:flex;flex-direction:column;gap:14px}
-.guide dt{font-weight:600}
-.guide dd{margin:2px 0 0;color:var(--muted);max-width:62ch}
-footer{margin-top:56px;padding-top:18px;border-top:1px solid var(--rule);font:500 12px/1.5 var(--mono);color:var(--muted)}
-.ad-slot{margin-block:20px}
-.toast{position:fixed;left:50%;bottom:calc(20px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);background:var(--ink);color:var(--paper);padding:10px 16px;border-radius:8px;font:500 13px/1.3 var(--body);max-width:calc(100% - 32px)}
-@media (prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}}
+/* controls */
+.panel{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-lg);padding:20px;display:grid;gap:20px;position:sticky;top:calc(env(safe-area-inset-top,0px) + 16px)}
+.group{display:grid;gap:9px;border:0;margin:0;padding:0;min-width:0}
+.group > legend,.glabel{padding:0;font-size:14px;font-weight:600;display:flex;justify-content:space-between;align-items:baseline;gap:8px;width:100%}
+.group > legend{margin-bottom:9px}
+.hint{font-size:13px;color:var(--muted);font-weight:400;margin:0}
+.pick{display:grid;gap:8px}
+.btn{appearance:none;border:1px solid var(--line);background:var(--surface);color:var(--ink);border-radius:var(--r-md);min-height:44px;padding:0 16px;font-size:15px;font-weight:600;display:inline-flex;align-items:center;justify-content:center;gap:8px;cursor:pointer;text-decoration:none}
+.btn:hover{border-color:var(--muted)}
+.btn.main{background:var(--action);border-color:var(--action);color:var(--on-action);min-height:50px;font-size:16px;width:100%}
+.btn.main:hover{opacity:.92}
+.btn[aria-busy="true"]{opacity:.7;cursor:progress}
+.linkbtn{appearance:none;border:0;background:none;padding:4px 0;font-size:14px;font-weight:550;color:var(--muted);text-decoration:underline;text-underline-offset:3px;cursor:pointer}
+.linkbtn:hover{color:var(--ink)}
+.filename{font-size:13px;color:var(--muted);overflow-wrap:anywhere}
+.seg{display:grid;grid-auto-flow:column;grid-auto-columns:1fr;gap:4px;padding:4px;background:var(--soft);border-radius:var(--r-md)}
+.seg button{appearance:none;border:0;background:none;border-radius:var(--r-sm);min-height:40px;padding:6px 4px;font-size:14px;font-weight:550;color:var(--muted);cursor:pointer;line-height:1.2}
+.seg button small{display:block;font-size:11.5px;font-weight:450;opacity:.8;margin-top:2px;font-variant-numeric:tabular-nums}
+.seg button[aria-pressed="true"]{background:var(--surface);color:var(--ink);box-shadow:0 1px 2px rgba(0,0,0,.08),0 0 0 1px var(--line)}
+.stepper{display:flex;align-items:center;gap:10px}
+.stepper button:not(.linkbtn){appearance:none;width:44px;height:44px;border-radius:var(--r-md);border:1px solid var(--line);background:var(--surface);font-size:22px;line-height:1;cursor:pointer;display:grid;place-items:center}
+.stepper button:not(.linkbtn):disabled{opacity:.35;cursor:default}
+.stepper output{min-width:2.2ch;text-align:center;font-size:22px;font-weight:700;font-variant-numeric:tabular-nums}
+.stepper .linkbtn{margin-left:auto}
+input[type=range]{width:100%;accent-color:var(--mat);height:28px}
+.save{display:grid;gap:10px;padding-top:4px}
+.summary{margin:0;font-size:14px;color:var(--muted)}
+.summary b{color:var(--ink);font-weight:600}
+
+/* guide */
+.guide{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:48px;padding-block:64px 8px}
+.guide h2{margin:0 0 18px;font-size:clamp(22px,2.4vw,28px);font-weight:750;letter-spacing:-.025em;line-height:1.15;text-wrap:balance}
+.steps{margin:0;padding:0;list-style:none;counter-reset:s;display:grid;gap:14px}
+.steps li{counter-increment:s;display:grid;grid-template-columns:32px minmax(0,1fr);gap:12px;align-items:start;max-width:58ch}
+.steps li::before{content:counter(s);width:28px;height:28px;border-radius:50%;background:var(--mat);color:var(--on-mat);font-size:14px;font-weight:700;display:grid;place-items:center;font-variant-numeric:tabular-nums;margin-top:-1px}
+.faq{display:grid;gap:0;border-top:1px solid var(--line)}
+.faq details{border-bottom:1px solid var(--line)}
+.faq summary{cursor:pointer;list-style:none;padding:15px 30px 15px 0;font-weight:600;position:relative}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"";position:absolute;right:4px;top:50%;width:9px;height:9px;border-right:2px solid var(--muted);border-bottom:2px solid var(--muted);transform:translateY(-70%) rotate(45deg);transition:transform .2s}
+.faq details[open] summary::after{transform:translateY(-30%) rotate(-135deg)}
+.faq details p{margin:0 0 16px;color:var(--muted);max-width:60ch}
+footer{margin-top:64px;padding-top:20px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px 24px;font-size:14px;color:var(--muted)}
+footer a{color:var(--muted)}
+.ad-slot{margin-block:24px}
+.toast{position:fixed;left:50%;bottom:calc(24px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);background:var(--ink);color:var(--paper);padding:12px 18px;border-radius:12px;font-size:15px;font-weight:500;max-width:calc(100% - 32px);z-index:30;box-shadow:0 10px 30px -10px rgba(0,0,0,.4)}
+
+/* phones and tablets */
+@media (max-width:960px){
+  .work{grid-template-columns:minmax(0,1fr)}
+  .stage{display:contents}
+  .mat{order:1}.panel{order:2;position:static}.card{order:3}
+  .guide{grid-template-columns:minmax(0,1fr);gap:40px}
+}
+@media (max-width:640px){
+  body{padding-bottom:calc(120px + env(safe-area-inset-bottom,0px))}
+  .hero{padding-block:8px 20px}
+  .mat{padding:14px;border-radius:14px;margin-inline:-6px}
+  .card,.panel{padding:18px}
+  .slice{width:96px}
+  .save{position:fixed;left:0;right:0;bottom:0;z-index:20;background:var(--surface);border-top:1px solid var(--line);
+    padding:12px max(16px,env(safe-area-inset-right,0px)) calc(12px + env(safe-area-inset-bottom,0px)) max(16px,env(safe-area-inset-left,0px));
+    box-shadow:0 -10px 30px -20px rgba(0,0,0,.4);gap:6px}
+  .save .summary{font-size:13px;text-align:center}
+  .save .linkbtn{justify-self:center;padding:0}
+  .toast{bottom:calc(140px + env(safe-area-inset-bottom,0px))}
+  .phone{width:100%}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
 </style>
 </head>
 <body>
-
-
 <div class="wrap">
-  <header>
-    <div class="mark"><i aria-hidden="true"></i>Swipeframe</div>
-    <div class="privacy">Runs in your browser · photos never upload</div>
+  <header class="top">
+    <a class="brand" href="/" aria-label="Swipeframe">
+      <svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="8" fill="#2E5B4C"/><rect x="5" y="9" width="22" height="14" rx="1.5" fill="#E8F0EB"/><path d="M12.3 7v18M19.7 7v18" stroke="#FFD84D" stroke-width="2" stroke-dasharray="2.6 2"/></svg>
+      Swipeframe
+    </a>
+    <a class="lang" href="/es/" hreflang="es" lang="es">Español</a>
   </header>
 
-  <section class="hero">
-    <h1>Split one wide photo into a <em>seamless</em> Instagram carousel.</h1>
-    <p class="lede">Drop a panorama, pick how many slides, and download perfectly sized 1080&nbsp;px JPGs that swipe into each other with no gaps. Profile-grid splits too.</p>
-  </section>
+  <main>
+    <section class="hero">
+      <h1>Split a panorama into a seamless Instagram carousel</h1>
+      <p class="lede">Drop in a wide photo and get perfectly sized slides that line up edge to edge when people swipe. Free, no signup, and your photo never leaves your device.</p>
+    </section>
 
-  <!-- AD SLOT (top): paste your AdSense unit here once approved -->
-  <div class="ad-slot" data-ad="top" hidden></div>
+    <!-- AD SLOT (top): paste an AdSense unit here once approved -->
+    <div class="ad-slot" data-ad="top" hidden></div>
 
-  <div class="work">
-    <aside class="rail" aria-label="Settings">
-      <div class="field">
-        <div class="label">Photo</div>
-        <div class="drop">
-          <button class="btn" id="pick" type="button">Choose photo</button>
-          <input id="file" type="file" accept="image/*" hidden>
-          <p>or drag it anywhere, or paste</p>
-          <div class="file" id="fname">Sample panorama loaded</div>
-        </div>
-      </div>
-
-      <div class="field">
-        <div class="label">Format</div>
-        <div class="seg" id="mode">
-          <button type="button" data-v="carousel" aria-pressed="true">Carousel</button>
-          <button type="button" data-v="grid" aria-pressed="false">Profile grid</button>
-        </div>
-      </div>
-
-      <div class="field">
-        <div class="label">Slide shape</div>
-        <div class="seg" id="ratio">
-          <button type="button" data-v="4:5" aria-pressed="true">4:5<small>1080×1350</small></button>
-          <button type="button" data-v="1:1" aria-pressed="false">1:1<small>1080×1080</small></button>
-          <button type="button" data-v="3:4" aria-pressed="false">3:4<small>1080×1440</small></button>
-        </div>
-      </div>
-
-      <div class="field" data-only="carousel">
-        <div class="label"><span>Slides</span><button class="btn small" id="best" type="button">Best fit</button></div>
-        <div class="row"><input id="count" type="range" min="2" max="20" value="3" aria-label="Number of slides"><span class="num" id="countN">3</span></div>
-      </div>
-
-      <div class="field" data-only="grid" hidden>
-        <div class="label">Rows of 3</div>
-        <div class="row"><input id="rows" type="range" min="1" max="6" value="2" aria-label="Rows"><span class="num" id="rowsN">2</span></div>
-      </div>
-
-      <div class="field">
-        <div class="label">Edges</div>
-        <div class="seg" id="fit">
-          <button type="button" data-v="fill" aria-pressed="true">Crop to fill</button>
-          <button type="button" data-v="fit" aria-pressed="false">Keep whole photo</button>
-        </div>
-      </div>
-
-      <div class="field" id="posField">
-        <div class="label"><span>Crop position</span><b id="posAxis">vertical</b></div>
-        <div class="row"><input id="pos" type="range" min="0" max="100" value="50" aria-label="Crop position"></div>
-      </div>
-
-      <div class="field" id="bgField" hidden>
-        <div class="label">Border</div>
-        <div class="seg" id="bg">
-          <button type="button" data-v="white" aria-pressed="true">White</button>
-          <button type="button" data-v="black" aria-pressed="false">Black</button>
-          <button type="button" data-v="blur" aria-pressed="false">Blur</button>
-        </div>
-      </div>
-
-      <div class="field">
-        <button class="btn primary" id="zip" type="button">Download all (.zip)</button>
-        <div class="meta" id="meta"></div>
-      </div>
-    </aside>
-
-    <div class="stage">
-      <div class="table">
-        <h2>Cut lines <span id="dims"></span></h2>
-        <canvas id="overview" aria-label="Photo with cut lines"></canvas>
-      </div>
-
-      <div class="table">
-        <h2>Frames <span id="orderHint">post in this order</span></h2>
-        <div class="film"><div class="frames" id="frames"></div></div>
-      </div>
-
-      <div class="table">
-        <h2 id="previewTitle">How it swipes</h2>
-        <div class="phone-wrap">
-          <div class="phone" id="phone">
-            <div class="bar"><i></i>yourname</div>
-            <div class="swipe" id="swipe"></div>
-            <div class="dots" id="dots"></div>
+    <div class="work">
+      <div class="stage">
+        <section class="mat" aria-label="Your photo and its slices">
+          <div class="print" id="print">
+            <canvas id="overview" role="img" aria-label="Your photo with the cut lines between slides"></canvas>
+            <div class="drophint" id="drophint" hidden>Drop the photo to load it</div>
           </div>
-          <p class="tip" id="tip"></p>
-        </div>
+          <div class="matnote"><span id="dragnote"></span><span id="dims"></span></div>
+          <div class="slices" id="slices" role="list" aria-label="Slices"></div>
+          <div class="matnote"><span id="slicenote"></span></div>
+        </section>
+
+        <section class="card" aria-labelledby="pvTitle">
+          <h2 id="pvTitle"></h2>
+          <p id="pvLede"></p>
+          <div class="previews">
+            <div class="phone">
+              <div class="who"><i aria-hidden="true"></i>yourname</div>
+              <div class="viewport"><div class="swipe" id="swipe"></div><span class="count" id="count"></span></div>
+              <div class="dots" id="dots" aria-hidden="true"></div>
+            </div>
+            <p class="tip" id="tip"></p>
+          </div>
+        </section>
       </div>
-    </div>
-  </div>
 
-  <!-- AD SLOT (middle) -->
-  <div class="ad-slot" data-ad="middle" hidden></div>
+      <aside class="panel" aria-label="Settings">
+        <div class="group">
+          <div class="glabel">Photo</div>
+          <div class="pick">
+            <button class="btn" id="pick" type="button">Choose a photo</button>
+            <input id="file" type="file" accept="image/*" hidden>
+            <p class="hint" id="pickhint">Or drag it onto the page, or paste it.</p>
+            <div class="filename" id="fname"></div>
+          </div>
+        </div>
 
-  <section class="guide">
-    <div>
-      <h2>How to post a seamless panorama on Instagram</h2>
-      <ol>
-        <li>Drop in a wide photo. Swipeframe suggests the slide count that keeps the most of it.</li>
-        <li>Pick 4:5 for the tallest slides in the feed, or 1:1 for squares.</li>
-        <li>Slide the crop position until the horizon sits where you want it.</li>
-        <li>Download the zip and unzip it on your phone.</li>
-        <li>In Instagram, tap +, choose Select multiple, and tap the files in order: 01, 02, 03…</li>
-        <li>Post. Followers swipe across one continuous image.</li>
-      </ol>
-    </div>
-    <div>
-      <h2>Questions</h2>
-      <dl>
-        <dt>How many slides can a carousel have?</dt>
-        <dd>Instagram allows up to 20 photos per carousel, so Swipeframe goes up to 20.</dd>
-        <dt>Which size is best?</dt>
-        <dd>4:5 at 1080 × 1350 px takes up the most screen in the feed. Every slide is exported at exactly that size, so Instagram doesn't recompress the edges.</dd>
-        <dt>What's the profile-grid mode?</dt>
-        <dd>It splits one image across 3, 6, 9 or more posts so your profile shows it as one big picture. Upload post-01 first; it ends up at the bottom right.</dd>
-        <dt>Is my photo uploaded anywhere?</dt>
-        <dd>No. All cutting happens in your browser. Nothing is sent to a server.</dd>
-      </dl>
-    </div>
-  </section>
+        <fieldset class="group">
+          <legend>Post as</legend>
+          <div class="seg" id="mode">
+            <button type="button" data-v="carousel" aria-pressed="true">Carousel</button>
+            <button type="button" data-v="grid" aria-pressed="false">Profile grid</button>
+          </div>
+        </fieldset>
 
-  <footer>Swipeframe · free panorama and grid splitter · not affiliated with Instagram or Meta</footer>
+        <fieldset class="group">
+          <legend>Slide shape</legend>
+          <div class="seg" id="ratio">
+            <button type="button" data-v="4:5" aria-pressed="true">Portrait<small>4:5</small></button>
+            <button type="button" data-v="1:1" aria-pressed="false">Square<small>1:1</small></button>
+            <button type="button" data-v="3:4" aria-pressed="false">Tall<small>3:4</small></button>
+          </div>
+        </fieldset>
+
+        <div class="group" data-only="carousel">
+          <div class="glabel" id="lblCount">Number of slides</div>
+          <div class="stepper" role="group" aria-labelledby="lblCount">
+            <button type="button" id="cMinus" aria-label="Fewer slides">−</button>
+            <output id="countN" aria-live="polite">3</output>
+            <button type="button" id="cPlus" aria-label="More slides">+</button>
+            <button type="button" class="linkbtn" id="best">Best fit</button>
+          </div>
+        </div>
+
+        <div class="group" data-only="grid" hidden>
+          <div class="glabel" id="lblRows">Rows of three</div>
+          <div class="stepper" role="group" aria-labelledby="lblRows">
+            <button type="button" id="rMinus" aria-label="Fewer rows">−</button>
+            <output id="rowsN" aria-live="polite">2</output>
+            <button type="button" id="rPlus" aria-label="More rows">+</button>
+          </div>
+        </div>
+
+        <fieldset class="group">
+          <legend>Edges</legend>
+          <div class="seg" id="fit">
+            <button type="button" data-v="fill" aria-pressed="true">Crop to fill</button>
+            <button type="button" data-v="fit" aria-pressed="false">Show whole photo</button>
+          </div>
+        </fieldset>
+
+        <div class="group" id="posGroup">
+          <label class="glabel" for="pos">Crop position</label>
+          <input id="pos" type="range" min="0" max="100" value="50">
+        </div>
+
+        <fieldset class="group" id="bgGroup" hidden>
+          <legend>Border</legend>
+          <div class="seg" id="bg">
+            <button type="button" data-v="white" aria-pressed="true">White</button>
+            <button type="button" data-v="black" aria-pressed="false">Black</button>
+            <button type="button" data-v="blur" aria-pressed="false">Blurred</button>
+          </div>
+        </fieldset>
+
+        <div class="save">
+          <button class="btn main" id="save" type="button"></button>
+          <button class="linkbtn" id="zipAlt" type="button" hidden>Download as .zip instead</button>
+          <p class="summary" id="summary"></p>
+        </div>
+      </aside>
+    </div>
+
+    <!-- AD SLOT (middle) -->
+    <div class="ad-slot" data-ad="middle" hidden></div>
+
+    <div class="guide">
+      <section>
+        <h2>How to post a seamless panorama on Instagram</h2>
+        <ol class="steps"><li>Choose a wide photo. Swipeframe suggests how many slides keep the most of it.</li><li>Pick Portrait (4:5) for the biggest slides in the feed, or Square (1:1).</li><li>Drag the photo to set what stays in frame.</li><li>Tap Save. On a phone, choose Save images to put them straight in your camera roll. On a computer you get a .zip file.</li><li>In Instagram, tap +, turn on Select multiple and pick the slides in order, starting with 1.</li><li>Post it. Every swipe continues the picture.</li></ol>
+      </section>
+      <section>
+        <h2>Questions</h2>
+        <div class="faq"><details><summary>How many slides can an Instagram carousel have?</summary><p>Up to 20 photos. Swipeframe splits your image into anywhere from 2 to 20 slides.</p></details><details><summary>What size should carousel slides be?</summary><p>1080 × 1350 px (4:5 portrait) takes up the most space in the feed. Swipeframe exports every slide at exactly 1080 px wide, so Instagram has nothing to resize.</p></details><details><summary>Why is there a visible line between my slides?</summary><p>Make sure every slide has the same shape and that you selected them in order. Mixing shapes makes Instagram crop each slide differently.</p></details><details><summary>How does the profile grid split work?</summary><p>It cuts one image into rows of three posts, so your profile shows a single big picture. Upload post 1 first; it ends up in the bottom right once all the posts are up.</p></details><details><summary>Does Swipeframe upload my photo?</summary><p>No. The cutting happens in your browser, so your photo stays on your phone or computer.</p></details><details><summary>Is it free?</summary><p>Yes. No account, no watermark and no limits.</p></details></div>
+      </section>
+    </div>
+  </main>
+
+  <footer>
+    <span>Swipeframe is free and runs in your browser. Made in Buenos Aires.</span>
+    <span>Not affiliated with Instagram or Meta.</span>
+  </footer>
 </div>
-<div class="toast" id="toast" hidden></div>
+<div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+<script>window.T={"locale": "en-US", "slide": "slide", "slides": "slides", "post": "post", "posts": "posts", "fileSlide": "slide", "filePost": "post", "zipCarousel": "carousel", "zipGrid": "grid", "saveShare": "Save {n} {u}", "saveZip": "Download {n} {u}", "sumFill": "{n} {u}, {w} × {h} px each. Keeps <b>{k}%<\/b> of your photo.", "sumFit": "{n} {u}, {w} × {h} px each. The whole photo fits, with a border.", "total": "{w} × {h} px in total", "dragX": "<b>Drag sideways<\/b> on the photo to move the crop.", "dragY": "<b>Drag up or down<\/b> on the photo to move the crop.", "saveOne": "Save number {n} on its own", "slideN": "Slide {n}", "postN": "Post {n}", "tapSlice": "Tap a slice to save just that one.", "clickSlice": "Click a slice to download just that one.", "pvCarousel": "How it swipes", "pvCarouselLede": "This is what your followers see. Swipe through to check the seams.", "pvGrid": "How your profile will look", "pvGridLede": "Each tile is its own post. Together they form one picture on your profile.", "tipCarouselTitle": "Select them in order", "tipCarousel": "When you pick photos in Instagram, tap slide 1 first and keep going in order. The files are numbered to make it easy.", "tipGridTitle": "Upload post 1 first", "tipGrid34": "Instagram puts your newest post at the top left, so start with post 1 and finish with the highest number. Tall (3:4) matches the profile grid exactly.", "tipGridOther": "Instagram puts your newest post at the top left, so start with post 1. The profile grid crops posts to 3:4, so choose Tall for tiles that line up exactly.", "preparing": "Preparing…", "downloaded": "Downloaded {n} images.", "notImage": "That file isn't an image. Choose a JPG or PNG.", "cantOpen": "Your browser can't open this image. Export it as a JPG and try again.", "exportFail": "Saving didn't work. Try a smaller photo or fewer slides.", "tapAgain": "Your browser needs one more tap. Press Save again.", "shareFail": "The save sheet didn't open. Use Download as .zip instead.", "loaded": "{name}, {w} × {h} px", "pasted": "Pasted image", "choosePhotoAgain": "Choose another photo", "sampleNote": "Showing a sample panorama.", "pickHintTouch": "Pick a wide photo from your camera roll."};</script>
 <script>
 (function(){
-const $=s=>document.querySelector(s);
-const RATIOS={'4:5':[4,5],'1:1':[1,1],'3:4':[3,4]};
-const S={src:null,base:'swipeframe',mode:'carousel',ratio:'4:5',count:3,rows:2,fit:'fill',bg:'white',pos:50};
+"use strict";
+var T=window.T, $=function(s){return document.querySelector(s)};
+var RATIOS={"4:5":[4,5],"1:1":[1,1],"3:4":[3,4]};
+var S={src:null,base:"swipeframe",sample:true,mode:"carousel",ratio:"4:5",count:3,rows:2,fit:"fill",bg:"white",pos:50};
+var touch=matchMedia("(pointer:coarse)").matches;
+function fmt(s,o){return s.replace(/\{(\w+)\}/g,function(_,k){return o[k]})}
+function pad(n){return String(n).padStart(2,"0")}
 
-/* ---------- sample panorama ---------- */
-function sample(){
-  const c=document.createElement('canvas');c.width=3600;c.height=1300;const x=c.getContext('2d');
-  const g=x.createLinearGradient(0,0,0,c.height);
-  g.addColorStop(0,'#1d2b4f');g.addColorStop(.45,'#7b5c8e');g.addColorStop(.7,'#f09a6b');g.addColorStop(1,'#f6c58a');
+/* ---------- sample panorama (drawn, so the page works before anyone uploads) ---------- */
+function samplePano(){
+  var c=document.createElement("canvas");c.width=3600;c.height=1300;var x=c.getContext("2d");
+  var g=x.createLinearGradient(0,0,0,c.height);
+  g.addColorStop(0,"#1E2C50");g.addColorStop(.42,"#6F5A8E");g.addColorStop(.68,"#EE9A6B");g.addColorStop(1,"#F7C88C");
   x.fillStyle=g;x.fillRect(0,0,c.width,c.height);
-  const sun=x.createRadialGradient(2350,820,10,2350,820,420);
-  sun.addColorStop(0,'rgba(255,240,200,1)');sun.addColorStop(.12,'rgba(255,220,160,.9)');sun.addColorStop(1,'rgba(255,200,140,0)');
+  var sun=x.createRadialGradient(2350,830,10,2350,830,440);
+  sun.addColorStop(0,"rgba(255,242,205,1)");sun.addColorStop(.12,"rgba(255,222,165,.9)");sun.addColorStop(1,"rgba(255,200,140,0)");
   x.fillStyle=sun;x.fillRect(0,0,c.width,c.height);
-  let seed=7;const rnd=()=>(seed=(seed*16807)%2147483647)/2147483647;
-  for(let i=0;i<160;i++){x.fillStyle='rgba(255,255,255,'+(rnd()*.7)+')';x.fillRect(rnd()*c.width,rnd()*380,2,2)}
-  const ridges=[['#5b4a72',640,140],['#3b3456',760,110],['#252540',880,80],['#141626',990,50]];
-  ridges.forEach(([col,base,amp],k)=>{
-    x.fillStyle=col;x.beginPath();x.moveTo(0,c.height);
-    const ph=rnd()*10;
-    for(let px=0;px<=c.width;px+=12){
-      const y=base-amp*(Math.sin(px/(380+k*90)+ph)*.6+Math.sin(px/(140+k*30)+ph*2)*.3+Math.sin(px/41+ph)*.06+.5);
-      x.lineTo(px,y)}
+  var seed=7;function rnd(){seed=(seed*16807)%2147483647;return seed/2147483647}
+  for(var i=0;i<170;i++){x.fillStyle="rgba(255,255,255,"+(rnd()*.7)+")";x.fillRect(rnd()*c.width,rnd()*380,2,2)}
+  [["#5B4A72",640,140],["#3B3456",760,110],["#252540",880,80],["#141626",990,50]].forEach(function(r,k){
+    x.fillStyle=r[0];x.beginPath();x.moveTo(0,c.height);var ph=rnd()*10;
+    for(var px=0;px<=c.width;px+=12){x.lineTo(px,r[1]-r[2]*(Math.sin(px/(380+k*90)+ph)*.6+Math.sin(px/(140+k*30)+ph*2)*.3+Math.sin(px/41+ph)*.06+.5))}
     x.lineTo(c.width,c.height);x.closePath();x.fill()});
   return c;
 }
 
 /* ---------- geometry ---------- */
-function grid(){return S.mode==='carousel'?[S.count,1]:[3,S.rows]}
-function tile(w){const [a,b]=RATIOS[S.ratio];return [w,Math.round(w*b/a)]}
+function grid(){return S.mode==="carousel"?[S.count,1]:[3,S.rows]}
+function tile(w){var r=RATIOS[S.ratio];return [w,Math.round(w*r[1]/r[0])]}
 function place(TW,TH){
-  const iw=S.src.width,ih=S.src.height;
-  const s=S.fit==='fill'?Math.max(TW/iw,TH/ih):Math.min(TW/iw,TH/ih);
-  const dw=iw*s,dh=ih*s,p=S.pos/100;
-  return S.fit==='fill'?{dx:(TW-dw)*p,dy:(TH-dh)*p,dw,dh}:{dx:(TW-dw)/2,dy:(TH-dh)/2,dw,dh};
+  var iw=S.src.width,ih=S.src.height;
+  var s=S.fit==="fill"?Math.max(TW/iw,TH/ih):Math.min(TW/iw,TH/ih);
+  var dw=iw*s,dh=ih*s,p=S.pos/100;
+  return S.fit==="fill"?{dx:(TW-dw)*p,dy:(TH-dh)*p,dw:dw,dh:dh}:{dx:(TW-dw)/2,dy:(TH-dh)/2,dw:dw,dh:dh};
 }
-const canFilter=(()=>{try{const t=document.createElement('canvas').getContext('2d');t.filter='blur(2px)';return t.filter==='blur(2px)'}catch(e){return false}})();
-function paint(ctx,TW,TH,ox,oy){ // draws whole composite offset by (-ox,-oy)
-  const {dx,dy,dw,dh}=place(TW,TH);
+var canFilter=(function(){try{var t=document.createElement("canvas").getContext("2d");t.filter="blur(2px)";return t.filter==="blur(2px)"}catch(e){return false}})();
+function paint(ctx,TW,TH,ox,oy){
+  var P=place(TW,TH);
   ctx.save();ctx.translate(-ox,-oy);
-  if(S.fit==='fit'){
-    if(S.bg==='blur'){
-      const iw=S.src.width,ih=S.src.height,s=Math.max(TW/iw,TH/ih)*1.08;
-      ctx.fillStyle='#222';ctx.fillRect(0,0,TW,TH);
-      if(canFilter)ctx.filter='blur('+Math.round(Math.max(TW,TH)*0.012)+'px)';
+  if(S.fit==="fit"){
+    if(S.bg==="blur"){
+      var iw=S.src.width,ih=S.src.height,s=Math.max(TW/iw,TH/ih)*1.1;
+      ctx.fillStyle="#222";ctx.fillRect(0,0,TW,TH);
+      if(canFilter)ctx.filter="blur("+Math.round(Math.max(TW,TH)*.012)+"px)";
       ctx.drawImage(S.src,(TW-iw*s)/2,(TH-ih*s)/2,iw*s,ih*s);
-      ctx.filter='none';ctx.fillStyle='rgba(0,0,0,.18)';ctx.fillRect(0,0,TW,TH);
-    }else{ctx.fillStyle=S.bg==='black'?'#000':'#fff';ctx.fillRect(0,0,TW,TH)}
+      ctx.filter="none";ctx.fillStyle="rgba(0,0,0,.16)";ctx.fillRect(0,0,TW,TH);
+    }else{ctx.fillStyle=S.bg==="black"?"#000":"#fff";ctx.fillRect(0,0,TW,TH)}
   }
-  ctx.drawImage(S.src,dx,dy,dw,dh);
+  ctx.drawImage(S.src,P.dx,P.dy,P.dw,P.dh);
   ctx.restore();
 }
 function renderTile(col,row,w){
-  const [cols,rows]=grid(),[W,H]=tile(w);
-  const c=document.createElement('canvas');c.width=W;c.height=H;
-  const ctx=c.getContext('2d');ctx.imageSmoothingQuality='high';
-  paint(ctx,cols*W,rows*H,col*W,row*H);
-  return c;
+  var g=grid(),t=tile(w),c=document.createElement("canvas");c.width=t[0];c.height=t[1];
+  var ctx=c.getContext("2d");ctx.imageSmoothingQuality="high";
+  paint(ctx,g[0]*t[0],g[1]*t[1],col*t[0],row*t[1]);return c;
 }
-function postNo(col,row){const [cols,rows]=grid();return S.mode==='carousel'?col+1:cols*rows-(row*cols+col)}
-function fileName(col,row){const n=String(postNo(col,row)).padStart(2,'0');return S.base+(S.mode==='carousel'?'_slide-':'_post-')+n+'.jpg'}
+function postNo(col,row){var g=grid();return S.mode==="carousel"?col+1:g[0]*g[1]-(row*g[0]+col)}
+function order(){var g=grid(),l=[];for(var j=0;j<g[1];j++)for(var i=0;i<g[0];i++)l.push([i,j]);
+  return l.sort(function(a,b){return postNo(a[0],a[1])-postNo(b[0],b[1])})}
+function unit(n){return S.mode==="carousel"?(n===1?T.slide:T.slides):(n===1?T.post:T.posts)}
+function fileName(col,row){return S.base+"-"+(S.mode==="carousel"?T.fileSlide:T.filePost)+"-"+pad(postNo(col,row))+".jpg"}
+function overflow(){var g=grid(),t=tile(1080),TW=g[0]*t[0],TH=g[1]*t[1],P=place(TW,TH);
+  return {x:S.fit==="fill"&&P.dw>TW+1,y:S.fit==="fill"&&P.dh>TH+1,kept:S.fit==="fill"?Math.round(100*TW*TH/(P.dw*P.dh)):100,TW:TW,TH:TH}}
 
-/* ---------- views ---------- */
+/* ---------- drawing ---------- */
 function drawOverview(){
-  const cv=$('#overview'),[cols,rows]=grid(),[W,H]=tile(1080);
-  const TW=cols*W,TH=rows*H,box=cv.parentElement.clientWidth-32;
-  const k=Math.min(1,(Math.max(box,240)*(window.devicePixelRatio||1))/TW);
+  var cv=$("#overview"),g=grid(),t=tile(1080),TW=g[0]*t[0],TH=g[1]*t[1];
+  var box=Math.max(260,cv.parentElement.clientWidth),dpr=Math.min(2,window.devicePixelRatio||1);
+  var k=Math.min(1,box*dpr/TW, (window.innerHeight*.62)*dpr/TH);
   cv.width=Math.round(TW*k);cv.height=Math.round(TH*k);
-  const ctx=cv.getContext('2d');ctx.imageSmoothingQuality='high';
+  cv.style.width=Math.min(box,cv.width/dpr)+"px";
+  var ctx=cv.getContext("2d");ctx.imageSmoothingQuality="high";
   ctx.save();ctx.scale(k,k);paint(ctx,TW,TH,0,0);ctx.restore();
-  const lw=Math.max(2,cv.width/500),cs=getComputedStyle(document.documentElement);
-  ctx.strokeStyle=cs.getPropertyValue('--pencil').trim()||'#cf2338';ctx.lineWidth=lw;ctx.setLineDash([lw*4,lw*3]);
-  for(let i=1;i<cols;i++){const x=Math.round(i*W*k)+.5;ctx.beginPath();ctx.moveTo(x,0);ctx.lineTo(x,cv.height);ctx.stroke()}
-  for(let j=1;j<rows;j++){const y=Math.round(j*H*k)+.5;ctx.beginPath();ctx.moveTo(0,y);ctx.lineTo(cv.width,y);ctx.stroke()}
+  var lw=Math.max(2,1.6*dpr);
+  ctx.lineWidth=lw;ctx.setLineDash([lw*3.5,lw*2.5]);
+  function line(x1,y1,x2,y2){ctx.strokeStyle="rgba(0,0,0,.45)";ctx.lineDashOffset=0;ctx.beginPath();ctx.moveTo(x1+lw*.6,y1+lw*.6);ctx.lineTo(x2+lw*.6,y2+lw*.6);ctx.stroke();
+    ctx.strokeStyle="#FFD84D";ctx.beginPath();ctx.moveTo(x1,y1);ctx.lineTo(x2,y2);ctx.stroke()}
+  for(var i=1;i<g[0];i++){var x=Math.round(i*t[0]*k);line(x,0,x,cv.height)}
+  for(var j=1;j<g[1];j++){var y=Math.round(j*t[1]*k);line(0,y,cv.width,y)}
   ctx.setLineDash([]);
-  const fs=Math.max(11,cv.width/70);ctx.font='500 '+fs+'px "JetBrains Mono",monospace';
-  for(let j=0;j<rows;j++)for(let i=0;i<cols;i++){
-    const t=String(postNo(i,j)).padStart(2,'0'),x=i*W*k+fs*.6,y=j*H*k+fs*.6;
-    const tw=ctx.measureText(t).width;
-    ctx.fillStyle='rgba(0,0,0,.55)';ctx.fillRect(x,y,tw+fs*.8,fs*1.5);
-    ctx.fillStyle='#fff';ctx.textBaseline='middle';ctx.fillText(t,x+fs*.4,y+fs*.78);
+  var fs=Math.round(Math.max(11*dpr,Math.min(15*dpr,cv.width/(g[0]*9))));
+  ctx.font="650 "+fs+"px 'Schibsted Grotesk',system-ui,sans-serif";ctx.textBaseline="middle";ctx.textAlign="center";
+  for(j=0;j<g[1];j++)for(i=0;i<g[0];i++){
+    var label=String(postNo(i,j)),r=fs*.95,cx=i*t[0]*k+r+fs*.55,cy=j*t[1]*k+r+fs*.55;
+    ctx.fillStyle="rgba(0,0,0,.6)";ctx.beginPath();ctx.arc(cx,cy,r,0,Math.PI*2);ctx.fill();
+    ctx.fillStyle="#fff";ctx.fillText(label,cx,cy+fs*.04);
   }
-  $('#dims').textContent=TW+' × '+TH+' px total';
+  var o=overflow();
+  cv.classList.toggle("drag-x",o.x);cv.classList.toggle("drag-y",o.y);
+  $("#dragnote").innerHTML=o.x?T.dragX:o.y?T.dragY:"";
+  $("#dims").textContent=fmt(T.total,{w:TW.toLocaleString(T.locale),h:TH.toLocaleString(T.locale)});
 }
-function buildFrames(){
-  const [cols,rows]=grid(),list=[];
-  for(let j=0;j<rows;j++)for(let i=0;i<cols;i++)list.push([i,j]);
-  list.sort((a,b)=>postNo(a[0],a[1])-postNo(b[0],b[1]));
-  const fr=$('#frames');fr.textContent='';
-  const thumbs={};
-  list.forEach(([i,j])=>{
-    const c=renderTile(i,j,360);thumbs[i+','+j]=c;
-    const f=document.createElement('div');f.className='frame';
-    f.appendChild(c);
-    const tag=document.createElement('div');tag.className='tag';
-    const lab=document.createElement('span');lab.textContent=String(postNo(i,j)).padStart(2,'0')+(S.mode==='carousel'?' ▸':'  POST');
-    const b=document.createElement('button');b.type='button';b.textContent='JPG';b.setAttribute('aria-label','Download frame '+postNo(i,j));
-    b.onclick=()=>downloadOne(i,j);
-    tag.append(lab,b);f.appendChild(tag);fr.appendChild(f);
+function copyCanvas(src){var c=document.createElement("canvas");c.width=src.width;c.height=src.height;c.getContext("2d").drawImage(src,0,0);return c}
+function buildViews(){
+  var g=grid(),list=order(),thumbs={},sl=$("#slices");sl.textContent="";
+  list.forEach(function(p){
+    var c=renderTile(p[0],p[1],400);thumbs[p[0]+","+p[1]]=c;
+    var b=document.createElement("button");b.type="button";b.className="slice";b.setAttribute("role","listitem");
+    var n=postNo(p[0],p[1]);
+    b.setAttribute("aria-label",fmt(T.saveOne,{n:n}));
+    var badge=document.createElement("i");badge.textContent=n;
+    var cap=document.createElement("span");cap.textContent=S.mode==="carousel"?fmt(T.slideN,{n:n}):fmt(T.postN,{n:n});
+    b.append(c,badge,cap);b.onclick=function(){saveFiles([p])};sl.appendChild(b);
   });
-  // preview panel
-  const sw=$('#swipe'),dots=$('#dots');sw.textContent='';dots.textContent='';
-  if(S.mode==='carousel'){
-    $('#previewTitle').textContent='How it swipes';
-    sw.className='swipe';
-    for(let i=0;i<cols;i++){const c=document.createElement('canvas');const t=thumbs[i+',0'];c.width=t.width;c.height=t.height;c.getContext('2d').drawImage(t,0,0);sw.appendChild(c);
-      const d=document.createElement('span');if(i===0)d.className='on';dots.appendChild(d)}
-    dots.hidden=false;
-    $('#tip').innerHTML='<b>Swipe the phone preview.</b> Each slide ends exactly where the next begins, so the picture flows across. Select the files in Instagram in order, 01 first.';
+  $("#slicenote").textContent=touch?T.tapSlice:T.clickSlice;
+  var sw=$("#swipe"),dots=$("#dots");sw.textContent="";dots.textContent="";sw.scrollLeft=0;
+  if(S.mode==="carousel"){
+    sw.className="swipe";
+    for(var i=0;i<g[0];i++){sw.appendChild(copyCanvas(thumbs[i+",0"]));var d=document.createElement("span");if(!i)d.className="on";dots.appendChild(d)}
+    dots.hidden=false;$("#count").hidden=false;$("#count").textContent="1/"+g[0];
+    $("#pvTitle").textContent=T.pvCarousel;$("#pvLede").textContent=T.pvCarouselLede;
+    $("#tip").innerHTML="<strong>"+T.tipCarouselTitle+"</strong>"+T.tipCarousel;
   }else{
-    $('#previewTitle').textContent='How your profile looks';
-    sw.className='gridview';dots.hidden=true;
-    for(let j=0;j<rows;j++)for(let i=0;i<cols;i++){const w=document.createElement('div');const t=thumbs[i+','+j];const c=document.createElement('canvas');c.width=t.width;c.height=t.height;c.getContext('2d').drawImage(t,0,0);const e=document.createElement('em');e.textContent='#'+postNo(i,j);w.append(c,e);sw.appendChild(w)}
-    $('#tip').innerHTML='<b>Post #1 first.</b> Instagram puts the newest post at the top left, so upload from the bottom-right tile backwards. '+(S.ratio==='3:4'?'3:4 matches how the profile grid crops posts, so the tiles line up exactly.':'Tip: the profile grid shows posts at 3:4. Pick 3:4 for a perfect fit.');
+    sw.className="profile";dots.hidden=true;$("#count").hidden=true;
+    for(var j=0;j<g[1];j++)for(i=0;i<g[0];i++){var w=document.createElement("div"),e=document.createElement("em");
+      e.textContent=fmt(T.postN,{n:postNo(i,j)});w.append(copyCanvas(thumbs[i+","+j]),e);sw.appendChild(w)}
+    $("#pvTitle").textContent=T.pvGrid;$("#pvLede").textContent=T.pvGridLede;
+    $("#tip").innerHTML="<strong>"+T.tipGridTitle+"</strong>"+(S.ratio==="3:4"?T.tipGrid34:T.tipGridOther);
   }
 }
-$('#swipe').addEventListener('scroll',e=>{
-  const sw=e.currentTarget;if(S.mode!=='carousel')return;
-  const i=Math.round(sw.scrollLeft/sw.clientWidth);
-  [...$('#dots').children].forEach((d,k)=>d.className=k===i?'on':'');
-});
-function updateMeta(){
-  const [cols,rows]=grid(),[W,H]=tile(1080),n=cols*rows;
-  const TW=cols*W,TH=rows*H,{dw,dh}=place(TW,TH);
-  const kept=S.fit==='fill'?Math.round(100*(TW*TH)/(dw*dh)):100;
-  $('#meta').innerHTML='<b>'+n+'</b> '+(S.mode==='carousel'?'slides':'posts')+' · '+W+' × '+H+' px · JPG<br>'+(S.fit==='fill'?'Keeps <b>'+kept+'%</b> of your photo':'Whole photo kept, with border');
-  const overX=dw>TW+1,overY=dh>TH+1;
-  $('#posField').hidden=S.fit!=='fill'||(!overX&&!overY);
-  $('#posAxis').textContent=overX?'left ↔ right':'top ↕ bottom';
-  $('#bgField').hidden=S.fit!=='fit';
-  document.querySelectorAll('[data-only]').forEach(el=>el.hidden=el.dataset.only!==S.mode);
-  $('#orderHint').textContent=S.mode==='carousel'?'select in this order':'upload in this order';
+$("#swipe").addEventListener("scroll",function(e){
+  if(S.mode!=="carousel")return;var sw=e.currentTarget,i=Math.round(sw.scrollLeft/sw.clientWidth);
+  Array.prototype.forEach.call($("#dots").children,function(d,k){d.className=k===i?"on":""});
+  $("#count").textContent=(i+1)+"/"+S.count;
+},{passive:true});
+
+function updatePanel(){
+  var g=grid(),n=g[0]*g[1],t=tile(1080),o=overflow();
+  $("#countN").textContent=S.count;$("#rowsN").textContent=S.rows;
+  $("#cMinus").disabled=S.count<=2;$("#cPlus").disabled=S.count>=20;
+  $("#rMinus").disabled=S.rows<=1;$("#rPlus").disabled=S.rows>=6;
+  document.querySelectorAll("[data-only]").forEach(function(el){el.hidden=el.dataset.only!==S.mode});
+  $("#posGroup").hidden=!(o.x||o.y);
+  $("#pos").setAttribute("aria-valuetext",S.pos+"%");
+  $("#bgGroup").hidden=S.fit!=="fit";
+  var u=unit(n);
+  $("#save").textContent=shareOK?fmt(T.saveShare,{n:n,u:u}):fmt(T.saveZip,{n:n,u:u});
+  $("#zipAlt").hidden=!shareOK;
+  $("#summary").innerHTML=S.fit==="fill"?fmt(T.sumFill,{n:n,u:u,w:t[0],h:t[1],k:o.kept}):fmt(T.sumFit,{n:n,u:u,w:t[0],h:t[1]});
 }
-let raf=0;
-function render(){cancelAnimationFrame(raf);raf=requestAnimationFrame(()=>{if(!S.src)return;updateMeta();drawOverview();clearTimeout(render.t);render.t=setTimeout(buildFrames,60)})}
-window.addEventListener('resize',()=>{clearTimeout(render.r);render.r=setTimeout(()=>S.src&&drawOverview(),120)});
+
+var raf=0,viewT=0;
+function render(){cancelAnimationFrame(raf);raf=requestAnimationFrame(function(){
+  if(!S.src)return;updatePanel();drawOverview();clearTimeout(viewT);viewT=setTimeout(buildViews,70);invalidate()})}
+var resizeT=0;window.addEventListener("resize",function(){clearTimeout(resizeT);resizeT=setTimeout(function(){S.src&&drawOverview()},120)});
 
 /* ---------- controls ---------- */
-function seg(id,key,after){
-  const el=$(id);
-  el.addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;
-    S[key]=b.dataset.v;[...el.children].forEach(x=>x.setAttribute('aria-pressed',x===b));after&&after();render()});
-}
-function setSeg(id,v){[...$(id).children].forEach(x=>x.setAttribute('aria-pressed',x.dataset.v===v))}
-seg('#mode','mode',()=>{if(S.mode==='grid'&&S.ratio==='4:5'){S.ratio='3:4';setSeg('#ratio','3:4')}});
-seg('#ratio','ratio');seg('#fit','fit');seg('#bg','bg');
-$('#count').addEventListener('input',e=>{S.count=+e.target.value;$('#countN').textContent=S.count;render()});
-$('#rows').addEventListener('input',e=>{S.rows=+e.target.value;$('#rowsN').textContent=S.rows;render()});
-$('#pos').addEventListener('input',e=>{S.pos=+e.target.value;render()});
-function bestFit(){
-  const [a,b]=RATIOS[S.ratio],n=Math.max(2,Math.min(20,Math.round((S.src.width/S.src.height)/(a/b))));
-  S.count=n;$('#count').value=n;$('#countN').textContent=n;
-}
-$('#best').addEventListener('click',()=>{bestFit();S.pos=50;$('#pos').value=50;render()});
+function seg(id,key,after){var el=$(id);el.addEventListener("click",function(e){var b=e.target.closest("button");if(!b)return;
+  S[key]=b.dataset.v;setSeg(id,S[key]);after&&after();render()})}
+function setSeg(id,v){Array.prototype.forEach.call($(id).children,function(x){x.setAttribute("aria-pressed",String(x.dataset.v===v))})}
+seg("#mode","mode",function(){if(S.mode==="grid"&&S.ratio==="4:5"){S.ratio="3:4";setSeg("#ratio","3:4")}});
+seg("#ratio","ratio",function(){if(S.mode==="carousel"&&S.auto)bestFit()});
+seg("#fit","fit");seg("#bg","bg");
+function step(key,d,min,max){S[key]=Math.max(min,Math.min(max,S[key]+d));if(key==="count")S.auto=false;render()}
+$("#cMinus").onclick=function(){step("count",-1,2,20)};$("#cPlus").onclick=function(){step("count",1,2,20)};
+$("#rMinus").onclick=function(){step("rows",-1,1,6)};$("#rPlus").onclick=function(){step("rows",1,1,6)};
+$("#pos").addEventListener("input",function(e){S.pos=+e.target.value;render()});
+function bestFit(){var r=RATIOS[S.ratio];S.count=Math.max(2,Math.min(20,Math.round((S.src.width/S.src.height)/(r[0]/r[1]))));S.auto=true}
+$("#best").onclick=function(){bestFit();S.pos=50;$("#pos").value=50;render()};
+
+/* drag the photo to move the crop */
+(function(){var cv=$("#overview"),drag=null;
+  cv.addEventListener("pointerdown",function(e){var o=overflow();if(!o.x&&!o.y)return;
+    drag={x:e.clientX,y:e.clientY,pos:S.pos,o:o,id:e.pointerId};cv.setPointerCapture(e.pointerId)});
+  cv.addEventListener("pointermove",function(e){if(!drag)return;
+    var r=cv.getBoundingClientRect(),g=grid(),t=tile(1080),P=place(drag.o.TW,drag.o.TH),scale=r.width/drag.o.TW;
+    var spare=drag.o.x?(P.dw-drag.o.TW)*scale:(P.dh-drag.o.TH)*scale;
+    var delta=drag.o.x?e.clientX-drag.x:e.clientY-drag.y;
+    S.pos=Math.round(Math.max(0,Math.min(100,drag.pos-delta/spare*100)));$("#pos").value=S.pos;render()});
+  function end(){drag=null}
+  cv.addEventListener("pointerup",end);cv.addEventListener("pointercancel",end);
+})();
 
 /* ---------- input ---------- */
 function loadFile(f){
-  if(!f||!/^image\//.test(f.type)){toast('That file isn’t an image. Try a JPG, PNG or HEIC exported as JPG.');return}
-  const url=URL.createObjectURL(f),img=new Image();
-  img.onload=()=>{S.src=img;S.base=(f.name||'photo').replace(/\.[^.]+$/,'').replace(/[^\w-]+/g,'-').slice(0,40)||'photo';
-    $('#fname').textContent=(f.name||'Pasted image')+' · '+img.naturalWidth+'×'+img.naturalHeight;
-    if(S.mode==='carousel')bestFit();S.pos=50;$('#pos').value=50;render()};
-  img.onerror=()=>toast('This image format can’t be opened in your browser. Export it as JPG and try again.');
-  img.src=url;
+  if(!f)return;
+  if(!/^image\//.test(f.type)){toast(T.notImage);return}
+  var url=URL.createObjectURL(f),img=new Image();
+  img.onload=function(){
+    S.src=img;S.sample=false;
+    S.base=((f.name||"photo").replace(/\.[^.]+$/,"").normalize("NFKD").replace(/[̀-ͯ]/g,"").replace(/[^\w-]+/g,"-").replace(/^-+|-+$/g,"").slice(0,40))||"photo";
+    $("#fname").textContent=fmt(T.loaded,{name:f.name||T.pasted,w:img.naturalWidth,h:img.naturalHeight});
+    $("#pick").textContent=T.choosePhotoAgain;
+    if(S.mode==="carousel")bestFit();S.pos=50;$("#pos").value=50;render();
+    $("#print").scrollIntoView({behavior:matchMedia("(prefers-reduced-motion:reduce)").matches?"auto":"smooth",block:"nearest"});
+  };
+  img.onerror=function(){toast(T.cantOpen)};img.src=url;
 }
-$('#pick').onclick=()=>$('#file').click();
-$('#file').onchange=e=>loadFile(e.target.files[0]);
-document.addEventListener('dragover',e=>e.preventDefault());
-document.addEventListener('drop',e=>{e.preventDefault();loadFile(e.dataTransfer.files[0])});
-document.addEventListener('paste',e=>{const it=[...(e.clipboardData||{}).items||[]].find(i=>i.type.startsWith('image/'));if(it)loadFile(it.getAsFile())});
+$("#pick").onclick=function(){$("#file").click()};
+$("#file").onchange=function(e){loadFile(e.target.files[0]);e.target.value=""};
+var dragDepth=0;
+document.addEventListener("dragenter",function(e){if(e.dataTransfer&&Array.prototype.indexOf.call(e.dataTransfer.types,"Files")>-1){dragDepth++;$("#drophint").hidden=false}});
+document.addEventListener("dragleave",function(){dragDepth=Math.max(0,dragDepth-1);if(!dragDepth)$("#drophint").hidden=true});
+document.addEventListener("dragover",function(e){e.preventDefault()});
+document.addEventListener("drop",function(e){e.preventDefault();dragDepth=0;$("#drophint").hidden=true;if(e.dataTransfer.files[0])loadFile(e.dataTransfer.files[0])});
+document.addEventListener("paste",function(e){var items=(e.clipboardData&&e.clipboardData.items)||[];for(var i=0;i<items.length;i++){if(items[i].type.indexOf("image/")===0){loadFile(items[i].getAsFile());break}}});
 
-/* ---------- export ---------- */
-function toBlob(c){return new Promise(r=>c.toBlob(r,'image/jpeg',.95))}
-function save(blob,name){const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download=name;document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(a.href),4000)}
-async function downloadOne(i,j){save(await toBlob(renderTile(i,j,1080)),fileName(i,j))}
-$('#zip').addEventListener('click',async()=>{
-  const btn=$('#zip');if(!window.JSZip){toast('The zip tool didn’t load. Use the JPG buttons under each frame.');return}
-  btn.disabled=true;btn.textContent='Preparing…';
+/* ---------- export: full-size JPGs are prepared in the background so saving feels instant ---------- */
+var shareOK=(function(){try{return touch&&!!navigator.canShare&&navigator.canShare({files:[new File([new Blob(["x"],{type:"image/jpeg"})],"t.jpg",{type:"image/jpeg"})]})}catch(e){return false}})();
+var cache={sig:"",files:{}},prepT=0,gen=0;
+function sig(){return [S.sample?"s":S.base,S.src&&S.src.width,S.mode,S.ratio,S.count,S.rows,S.fit,S.bg,S.pos].join("|")}
+function toBlob(c){return new Promise(function(r,j){c.toBlob(function(b){b?r(b):j(new Error("blob"))},"image/jpeg",.94)})}
+function invalidate(){clearTimeout(prepT);gen++;prepT=setTimeout(prepare,600)}
+async function prepare(){var my=gen,s=sig();if(cache.sig!==s){cache={sig:s,files:{}}}
+  var list=order();for(var i=0;i<list.length;i++){if(my!==gen)return;var p=list[i],key=p[0]+","+p[1];
+    if(!cache.files[key]){var b=await toBlob(renderTile(p[0],p[1],1080));if(my!==gen)return;cache.files[key]=new File([b],fileName(p[0],p[1]),{type:"image/jpeg"})}}}
+async function getFiles(list){var s=sig();if(cache.sig!==s)cache={sig:s,files:{}};var out=[];
+  for(var i=0;i<list.length;i++){var p=list[i],key=p[0]+","+p[1];
+    if(!cache.files[key]){var b=await toBlob(renderTile(p[0],p[1],1080));cache.files[key]=new File([b],fileName(p[0],p[1]),{type:"image/jpeg"})}
+    out.push(cache.files[key])}return out}
+function download(blob,name){var a=document.createElement("a");a.href=URL.createObjectURL(blob);a.download=name;document.body.appendChild(a);a.click();a.remove();setTimeout(function(){URL.revokeObjectURL(a.href)},5000)}
+
+/* minimal ZIP writer (JPGs are already compressed, so files are stored as-is) */
+var CRC=(function(){var t=new Uint32Array(256);for(var n=0;n<256;n++){var c=n;for(var k=0;k<8;k++)c=c&1?0xEDB88320^(c>>>1):c>>>1;t[n]=c>>>0}return t})();
+function crc32(u){var c=0xFFFFFFFF;for(var i=0;i<u.length;i++)c=CRC[(c^u[i])&255]^(c>>>8);return (c^0xFFFFFFFF)>>>0}
+async function makeZip(files){
+  var parts=[],central=[],offset=0,d=new Date(),time=(d.getHours()<<11)|(d.getMinutes()<<5)|(d.getSeconds()>>1),date=((d.getFullYear()-1980)<<9)|((d.getMonth()+1)<<5)|d.getDate();
+  for(var i=0;i<files.length;i++){
+    var data=new Uint8Array(await files[i].arrayBuffer()),name=new TextEncoder().encode(files[i].name),crc=crc32(data);
+    var h=new DataView(new ArrayBuffer(30));
+    h.setUint32(0,0x04034b50,true);h.setUint16(4,20,true);h.setUint16(6,0x0800,true);h.setUint16(8,0,true);h.setUint16(10,time,true);h.setUint16(12,date,true);
+    h.setUint32(14,crc,true);h.setUint32(18,data.length,true);h.setUint32(22,data.length,true);h.setUint16(26,name.length,true);h.setUint16(28,0,true);
+    var c=new DataView(new ArrayBuffer(46));
+    c.setUint32(0,0x02014b50,true);c.setUint16(4,20,true);c.setUint16(6,20,true);c.setUint16(8,0x0800,true);c.setUint16(10,0,true);c.setUint16(12,time,true);c.setUint16(14,date,true);
+    c.setUint32(16,crc,true);c.setUint32(20,data.length,true);c.setUint32(24,data.length,true);c.setUint16(28,name.length,true);c.setUint32(42,offset,true);
+    parts.push(h,name,data);central.push(c,name);offset+=30+name.length+data.length;
+  }
+  var size=central.reduce(function(s,x){return s+x.byteLength},0),e=new DataView(new ArrayBuffer(22));
+  e.setUint32(0,0x06054b50,true);e.setUint16(8,files.length,true);e.setUint16(10,files.length,true);e.setUint32(12,size,true);e.setUint32(16,offset,true);
+  return new Blob(parts.concat(central,[e]),{type:"application/zip"});
+}
+
+var busy=false;
+async function saveFiles(list,forceZip){
+  if(busy)return;busy=true;var btn=$("#save"),label=btn.textContent;btn.setAttribute("aria-busy","true");btn.textContent=T.preparing;
   try{
-    const zip=new JSZip(),[cols,rows]=grid();
-    for(let j=0;j<rows;j++)for(let i=0;i<cols;i++)zip.file(fileName(i,j),await toBlob(renderTile(i,j,1080)));
-    save(await zip.generateAsync({type:'blob'}),S.base+'_'+(S.mode==='carousel'?'carousel':'grid')+'.zip');
-    toast('Downloaded '+cols*rows+' images.');
-  }catch(e){toast('Export failed. Try a smaller photo or fewer slides.')}
-  btn.disabled=false;btn.textContent='Download all (.zip)';
-});
-function toast(m){const t=$('#toast');t.textContent=m;t.hidden=false;clearTimeout(toast.t);toast.t=setTimeout(()=>t.hidden=true,3200)}
+    var files=await getFiles(list);
+    if(shareOK&&!forceZip){
+      try{await navigator.share({files:files});}
+      catch(e){if(e&&e.name==="NotAllowedError")toast(T.tapAgain);else if(!e||e.name!=="AbortError")toast(T.shareFail)}
+    }else if(files.length===1){download(files[0],files[0].name)}
+    else{download(await makeZip(files),S.base+"-"+(S.mode==="carousel"?T.zipCarousel:T.zipGrid)+".zip");toast(fmt(T.downloaded,{n:files.length}))}
+  }catch(e){toast(T.exportFail)}
+  btn.removeAttribute("aria-busy");btn.textContent=label;busy=false;
+}
+$("#save").onclick=function(){saveFiles(order())};
+$("#zipAlt").onclick=function(){saveFiles(order(),true)};
+
+var toastT=0;function toast(m){var t=$("#toast");t.textContent=m;t.hidden=false;clearTimeout(toastT);toastT=setTimeout(function(){t.hidden=true},3600)}
 
 /* ---------- start ---------- */
-S.src=sample();bestFit();render();
+if(touch)$("#pickhint").textContent=T.pickHintTouch;
+$("#fname").textContent=T.sampleNote;
+S.src=samplePano();bestFit();render();
+if(document.fonts&&document.fonts.ready)document.fonts.ready.then(function(){S.src&&drawOverview()});
 })();
 </script>
-
 </body>
 </html>

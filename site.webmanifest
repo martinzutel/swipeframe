@@ -1,0 +1,28 @@
+{
+  "name": "Swipeframe",
+  "short_name": "Swipeframe",
+  "description": "Free online tool that splits a panorama into a seamless Instagram carousel or profile grid.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#F4F5F2",
+  "theme_color": "#2E5B4C",
+  "icons": [
+    {
+      "src": "/assets/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/assets/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "/assets/icon-maskable-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}
