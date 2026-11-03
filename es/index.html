@@ -183,6 +183,10 @@ input[type=range]{width:100%;accent-color:var(--mat);height:28px}
 footer{margin-top:64px;padding-top:20px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px 24px;font-size:14px;color:var(--muted)}
 footer a{color:var(--muted)}
 .ad-slot{margin-block:24px}
+.fab{position:fixed;left:50%;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:20;transform:translate(-50%,calc(100% + 24px));opacity:0;pointer-events:none;
+  appearance:none;border:0;border-radius:999px;background:var(--action);color:var(--on-action);font-size:15px;font-weight:650;min-height:46px;padding:0 22px;
+  box-shadow:0 8px 24px -8px rgba(0,0,0,.45);cursor:pointer;transition:transform .22s ease,opacity .22s ease;white-space:nowrap}
+.fab.show{transform:translate(-50%,0);opacity:1;pointer-events:auto}
 .toast{position:fixed;left:50%;bottom:calc(24px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);background:var(--ink);color:var(--paper);padding:12px 18px;border-radius:12px;font-size:15px;font-weight:500;max-width:calc(100% - 32px);z-index:30;box-shadow:0 10px 30px -10px rgba(0,0,0,.4)}
 
 /* phones and tablets */
@@ -193,17 +197,10 @@ footer a{color:var(--muted)}
   .guide{grid-template-columns:minmax(0,1fr);gap:40px}
 }
 @media (max-width:640px){
-  body{padding-bottom:calc(120px + env(safe-area-inset-bottom,0px))}
   .hero{padding-block:8px 20px}
   .mat{padding:14px;border-radius:14px;margin-inline:-6px}
   .card,.panel{padding:18px}
   .slice{width:96px}
-  .save{position:fixed;left:0;right:0;bottom:0;z-index:20;background:var(--surface);border-top:1px solid var(--line);
-    padding:12px max(16px,env(safe-area-inset-right,0px)) calc(12px + env(safe-area-inset-bottom,0px)) max(16px,env(safe-area-inset-left,0px));
-    box-shadow:0 -10px 30px -20px rgba(0,0,0,.4);gap:6px}
-  .save .summary{font-size:13px;text-align:center}
-  .save .linkbtn{justify-self:center;padding:0}
-  .toast{bottom:calc(140px + env(safe-area-inset-bottom,0px))}
   .phone{width:100%}
 }
 @media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
@@ -351,6 +348,7 @@ footer a{color:var(--muted)}
     <span>Sin relación con Instagram ni Meta.</span>
   </footer>
 </div>
+<button class="fab" id="fab" type="button" tabindex="-1" aria-hidden="true"></button>
 <div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
 
 <script>window.T={"locale": "es-AR", "slide": "slide", "slides": "slides", "post": "publicación", "posts": "publicaciones", "fileSlide": "slide", "filePost": "post", "zipCarousel": "carrusel", "zipGrid": "cuadricula", "saveShare": "Guardar {n} {u}", "saveZip": "Descargar {n} {u}", "sumFill": "{n} {u} de {w} × {h} px. Conserva el <b>{k}%<\/b> de tu foto.", "sumFit": "{n} {u} de {w} × {h} px. La foto entera entra, con borde.", "total": "{w} × {h} px en total", "dragX": "<b>Arrastra hacia los costados<\/b> sobre la foto para mover el recorte.", "dragY": "<b>Arrastra hacia arriba o abajo<\/b> sobre la foto para mover el recorte.", "saveOne": "Guardar solo la número {n}", "slideN": "Slide {n}", "postN": "Publicación {n}", "tapSlice": "Toca una parte para guardar solo esa.", "clickSlice": "Haz clic en una parte para descargar solo esa.", "pvCarousel": "Cómo se desliza", "pvCarouselLede": "Esto es lo que ven tus seguidores. Desliza para revisar las uniones.", "pvGrid": "Cómo se verá tu perfil", "pvGridLede": "Cada parte es una publicación. Juntas forman una sola imagen en tu perfil.", "tipCarouselTitle": "Elígelas en orden", "tipCarousel": "Al elegir las fotos en Instagram, toca primero la slide 1 y sigue en orden. Los archivos están numerados para que sea fácil.", "tipGridTitle": "Sube primero la publicación 1", "tipGrid34": "Instagram pone la publicación más nueva arriba a la izquierda, así que empieza por la 1 y termina con el número más alto. Alta (3:4) coincide exactamente con la cuadrícula del perfil.", "tipGridOther": "Instagram pone la publicación más nueva arriba a la izquierda, así que empieza por la 1. La cuadrícula del perfil recorta las publicaciones a 3:4; elige Alta para que encajen perfecto.", "preparing": "Preparando…", "downloaded": "Se descargaron {n} imágenes.", "notImage": "Ese archivo no es una imagen. Elige un JPG o PNG.", "cantOpen": "Tu navegador no puede abrir esta imagen. Expórtala como JPG y vuelve a intentarlo.", "exportFail": "No se pudo guardar. Prueba con una foto más chica o menos slides.", "tapAgain": "Tu navegador necesita un toque más. Toca Guardar otra vez.", "shareFail": "No se abrió el menú para guardar. Usa Descargar como .zip.", "loaded": "{name}, {w} × {h} px", "pasted": "Imagen pegada", "choosePhotoAgain": "Elegir otra foto", "sampleNote": "Se muestra una panorámica de ejemplo.", "pickHintTouch": "Elige una foto ancha de tu galería."};</script>
@@ -492,7 +490,7 @@ function updatePanel(){
   $("#pos").setAttribute("aria-valuetext",S.pos+"%");
   $("#bgGroup").hidden=S.fit!=="fit";
   var u=unit(n);
-  $("#save").textContent=shareOK?fmt(T.saveShare,{n:n,u:u}):fmt(T.saveZip,{n:n,u:u});
+  $("#save").textContent=$("#fab").textContent=shareOK?fmt(T.saveShare,{n:n,u:u}):fmt(T.saveZip,{n:n,u:u});
   $("#zipAlt").hidden=!shareOK;
   $("#summary").innerHTML=S.fit==="fill"?fmt(T.sumFill,{n:n,u:u,w:t[0],h:t[1],k:o.kept}):fmt(T.sumFit,{n:n,u:u,w:t[0],h:t[1]});
 }
@@ -601,7 +599,17 @@ async function saveFiles(list,forceZip){
   }catch(e){toast(T.exportFail)}
   btn.removeAttribute("aria-busy");btn.textContent=label;busy=false;
 }
-$("#save").onclick=function(){saveFiles(order())};
+$("#save").onclick=$("#fab").onclick=function(){saveFiles(order())};
+
+/* small floating Save on phones: only while the photo is on screen; the real Save sits under the settings */
+(function(){
+  if(!("IntersectionObserver" in window))return;
+  var fab=$("#fab"),phone=matchMedia("(max-width:640px)"),toolOn=false,saveOn=false;
+  function sync(){var show=phone.matches&&toolOn&&!saveOn;fab.classList.toggle("show",show);fab.tabIndex=show?0:-1;fab.setAttribute("aria-hidden",String(!show))}
+  new IntersectionObserver(function(e){toolOn=e[0].isIntersecting;sync()},{rootMargin:"0px 0px -30% 0px"}).observe($(".mat"));
+  new IntersectionObserver(function(e){saveOn=e[0].isIntersecting;sync()}).observe($(".save"));
+  phone.addEventListener&&phone.addEventListener("change",sync);
+})();
 $("#zipAlt").onclick=function(){saveFiles(order(),true)};
 
 var toastT=0;function toast(m){var t=$("#toast");t.textContent=m;t.hidden=false;clearTimeout(toastT);toastT=setTimeout(function(){t.hidden=true},3600)}
