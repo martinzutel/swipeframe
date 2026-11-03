@@ -6,7 +6,7 @@ Change SITE_URL if the site lives on another domain.
 """
 import html, json, pathlib
 
-SITE_URL = "https://swipeframe.pages.dev"
+SITE_URL = "https://swipeframe.scottyandbilldev.workers.dev"
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 TEMPLATE = (ROOT / "_build" / "template.html").read_text(encoding="utf-8")

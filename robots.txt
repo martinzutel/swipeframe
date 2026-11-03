@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 Disallow: /_build/
 
-Sitemap: https://swipeframe.pages.dev/sitemap.xml
+Sitemap: https://swipeframe.scottyandbilldev.workers.dev/sitemap.xml
